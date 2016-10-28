@@ -15,10 +15,7 @@ function MenuItemValidator($q, MenuService) {
 
       ctrl.$asyncValidators.menuItemValidator = function(modelValue , viewValue) {
 
-        //  scope.$parent.signupCtrl.validMenu = false;
-
          if (ctrl.$isEmpty(modelValue)) {
-            // consider empty model valid
             return $q.when(false);
          }
 
@@ -27,7 +24,6 @@ function MenuItemValidator($q, MenuService) {
          MenuService.getMenuItem(modelValue)
          .then(function (response) {
             scope.$parent.signupCtrl.setSelectedMenu(response.data);
-            // scope.$parent.signupCtrl.validMenu = true;
             deferred.resolve(response);
          }, function (error) {
             scope.$parent.signupCtrl.setSelectedMenu({short_name: modelValue});

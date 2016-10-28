@@ -55,22 +55,6 @@ function routeConfig ($stateProvider) {
               return null;
             });
         }]
-        /*
-        myinfo: ['UserService', 'MenuService', function (UserService, MenuService) {
-          return UserService.getMyInfo().then(
-            function(info) {
-                return MenuService.getMenuItem(info.favoritedish).then(
-                  function(res) {
-                      info.favoritedish = res.data;
-                      return info;
-                  }).catch(function(error) {
-                    return null;
-                  });
-            }).catch(function(error) {
-              return null;
-            });
-        }]
-        */
       }
     })
     .state('public.signup', {
